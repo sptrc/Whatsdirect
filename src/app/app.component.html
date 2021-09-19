@@ -1,0 +1,33 @@
+<nav class="navbar navbar-light wh-nav">
+  <span class="navbar-brand mb-0 h1 wh-brand">{{ title }}</span>
+</nav>
+<div class="container">
+  <div class="box px-2 text-center">
+    <p class="py-4">
+      Enter or paste phone number to continue chat in Whatsapp without saving
+      the number
+    </p>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        #num
+        class="form-control"
+        placeholder="Phone number"
+        aria-label="Phone number"
+        aria-describedby="basic-addon2"
+        (keypress)="numbersOnly($event, num.value)"
+        (keydown)="lengthSpec(num.value)"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-success"
+          type="button"
+          (mousedown)="redirect(num.value)"
+          [disabled]="disabledButton"
+        >
+          Redirect
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.wh-nav {
+  background: #128c7e;
+}
+.wh-brand {
+  color: white !important;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 90vh;
+}
