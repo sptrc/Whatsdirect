@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+.holder:focusm.bcksp:focus {
+  outline: none;
+}
 .wh-nav {
   background: #128c7e;
 }
@@ -14,4 +18,34 @@
 
 .container {
   height: 90vh;
+  overflow: hidden;
+}
+
+.dialpad {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.num {
+  flex: 1;
+}
+.num > button {
+  font-size: 2em;
+}
+.holder {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  border: none;
+  height: 50px;
+  border-bottom: 1px solid grey;
+}
+
+.bcksp {
+  float: right;
+  position: fixed;
+  right: 10px;
 }

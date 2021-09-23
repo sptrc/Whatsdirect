@@ -3,31 +3,47 @@
 </nav>
 <div class="container">
   <div class="box px-2 text-center">
-    <p class="py-4">
-      Enter or paste phone number to continue chat in Whatsapp without saving
-      the number
+    <p class="py-4 m-0">
+      Enter phone number to continue chat in Whatsapp without saving the number
     </p>
-    <div class="input-group mb-3">
+    <div class="holder mb-4">
+      {{ number }}
+      <button class="btn bcksp" type="button" (click)="backs()" *ngIf="bksp">
+        <img src="../assets/icons/backspace.png" alt="" srcset="" width="30" />
+      </button>
+    </div>
+    <!-- <div class="input-group mb-3">
       <input
-        type="text"
+        type="number"
         #num
-        class="form-control"
-        placeholder="Phone number"
+        class="form-control number pr-0 pl-3 w-75"
         aria-label="Phone number"
         aria-describedby="basic-addon2"
-        (keypress)="numbersOnly($event, num.value)"
-        (keydown)="lengthSpec(num.value)"
+        [(ngModel)]="number"
       />
-      <div class="input-group-append">
-        <button
-          class="btn btn-success"
-          type="button"
-          (mousedown)="redirect(num.value)"
-          [disabled]="disabledButton"
-        >
-          Redirect
+      <div class="input-group-append" *ngIf="bksp">
+        <button class="btn bcksp" type="button" (click)="backs()">
+          <img
+            src="../assets/icons/backspace.png"
+            alt=""
+            srcset=""
+            width="30"
+          />
         </button>
       </div>
+    </div> -->
+    <div class="dialpad">
+      <app-numbutton
+        *ngFor="let btn of buttons"
+        [num]="btn"
+        (msgEv)="rcvEv($event)"
+      ></app-numbutton>
     </div>
+    <button
+      class="btn btn-outline-success w-75 my-4"
+      (mousedown)="redirect(number)"
+    >
+      Redirect
+    </button>
   </div>
 </div>
